@@ -42,6 +42,11 @@ list4 = ['domi',23,True,58888.99]
 
 list5 = [['a','b'],['c','d']]
 
+# 也可以使用list()函数创建列表
+
+list6 = list('abcdef')
+
+
 ```
 
 ### 2.2.3 打印列表
@@ -59,6 +64,8 @@ print(list3) # ['a','b','c','d','e']
 print(list4) # ['domi',23,True,58888.99]
 
 print(list5) # [['a','b'],['c','d']]
+
+print(list6) # ['a','b','c','d','e']
 
 ```
 

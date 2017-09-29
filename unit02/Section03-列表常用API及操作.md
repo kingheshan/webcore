@@ -353,3 +353,123 @@ print(newList) # [-59, 15, 23, 89, 234, 857]
 
 
 ```
+
+### 2.3.6 列表VS字符串
+
+接着我们一起来回顾下列表和字符串,将他们做一个对比。
+
+因为列表和字符串有不少相似的地方，但也是有很大的区别的。
+
+- 相同点：都是序列
+- 区别：列表可以被改变，字符串不能被改变
+
+首先先看相同点：
+
+不论是组成列表的的元素还是组成字符串的字符，它们都可以从左向右，依次用0,1,2...这样的方式建立索引；同样的可以使用切片方式得到一个或者多个元素。
+
+一起来回顾下：
+
+```python
+
+# 字符串
+
+string1 = 'python'
+
+print(string1[0]) # p
+
+print(string[-1]) # n
+
+print('hello' + ',' + 'world') # hello,world
+
+print(string1 * 3) # pythonpythonpython
+
+print(string1[0:2]) # py
+
+print(len(string1)) # 6
+
+
+# 列表
+
+list1 = ['I','Love','Python']
+
+print(list1[0]) # I
+
+print(list1[-1]) # Python
+
+print(['a','b','c'] + ['d','e','f']) # ['a', 'b', 'c', 'd', 'e', 'f']
+
+print(list1 * 3) # ['I', 'Love', 'Python', 'I', 'Love', 'Python', 'I', 'Love', 'Python']
+
+print(list1[0:2]) # I Love
+
+print(len(list1)) # 3
+
+```
+
+---
+
+接着我们再来看看列表和字符串的最大区别是：列表是可以改变的，字符串是不能改变的。
+
+```python
+
+list1 = ['a','b','c']
+
+list1.append('d')
+
+print(list1) # ['a', 'b', 'c', 'd']
+
+list1.insert(2,'w')
+
+print(list1) # ['a', 'b', 'w', 'c', 'd']
+
+list1[0] = 'x'
+
+print(list1) # ['x', 'b', 'w', 'c', 'd']
+
+list1.pop() # d
+
+print(list1) # ['a', 'b', 'w', 'c']
+
+del list1[0] # ['b', 'w', 'c']
+
+# 如果把这些列表操作应用到字符串操作的时候，都会产生错误
+
+string1 = 'python'
+
+string1[0] = 'x' # 报错
+
+del string1[2] # 报错
+
+```
+
+接着有了列表之后，就可以测试字符串和列表相互转换了：
+
+```python
+
+# 字符串拆分的结果就是列表，逆向操作就是把列表连接成字符串
+
+string1 = '2017-11-23'
+
+res = string1.split('-')
+
+print(res) # ['2017', '11', '23']
+
+# 将res连接成字符串
+
+res1 = '-'.join(res)
+
+print(res1) # 2017-11-23
+
+```
+
+也可以通过list()函数快速将字符串转换成列表,字符串中每个字符对应一个元素:
+
+```python
+
+list1 = list('abcd')
+
+print(list1) # ['a','b','c','d']
+
+
+
+```
