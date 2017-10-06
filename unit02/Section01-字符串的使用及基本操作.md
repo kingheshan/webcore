@@ -895,10 +895,11 @@ print('{} 对应的位置是{{0}}'.format('python')) # python 对应的位置是
 字符串除了有format()方法以外，还有很多常用的方法，我们可以通过例子演示下：
 
 - 字符串大小写转换
-  - str.upper():转换成大写
-  - str.lower():转换成小写
+  - str.upper():将字符串中的小写字符转换成大写
+  - str.lower():将字符串中的大写字符转换成小写
   - str.capitalize():首字母大写
   - str.title():将字符串中的单词的首字母大写，其余字母都小写
+  - str.casefold():将字符串中的所有字符转换成小写
   - str.swapcase():将字符串中的大小写颠倒
   - str.isupper():检测字符串中的字母是否都是大写字母
   - str.islower():检测字符串中的字母是否都是小写
@@ -937,13 +938,17 @@ print('{} 对应的位置是{{0}}'.format('python')) # python 对应的位置是
 
 string1 = 'tHIs is a tESt'
 
-# 转换成大写
+# 将字符串中的小写字符转换成大写
 
 print(string1.upper()) # THIS IS A TEST
 
-# 转换成小写
+# 将字符串中的大写字符转换成小写
 
 print(string1.lower()) # this is a test
+
+# 转换成小写
+
+print(string1.casefold()) # this is a test
 
 # 首字母大写
 
@@ -1193,7 +1198,7 @@ string1 = 'a b c d e'
 
 # 默认以空格拆分
 
-print(string1.split()) # ['a','b','c','d','e'] 拆分的结果是一个列表，先不用考虑什么是列表，后续课程会详细剖析
+print(string1.split()) # ['a', 'b', 'c', 'd', 'e'] 拆分的结果是一个列表，先不用考虑什么是列表，后续课程会详细剖析
 
 print(string1.split(' ')) # ['a', 'b', 'c', 'd', 'e']
 
@@ -1203,15 +1208,23 @@ print(fileName.split('.')) # ['1', 'txt', 'php', 'jpeg']
 
 dateStr = '2017-11-16'
 
-print(dateStr.split('-')) # ['2017','11','16']
+print(dateStr.split('-')) # ['2017', '11', '16']
 
 # 可以以指定分隔符拆分，也可以以指定分隔符连接，使用join()方法,连接的序列后续会详细的来讲
 
-print('-'.join(['2017','11','16'])) # 2017-11-16
+print('-'.join(['2017', '11', '16'])) # 2017-11-16
 
-print('/'.join(['2017','11','16'])) # 2017/11/16
+print('/'.join(['2017', '11', '16'])) # 2017/11/16
+
+# 连接字符串同样也可以
+
+print('.'.join('abc')) # a.b.c
+
+print(' '.join('abc')) # a b c
 
 ```
+
+之前我们连接字符串可以使用+号来实现，但是如果使用+拼接大量字符串的时候效率会很低，因为加号连接会引发内存复制以及垃圾回收操作。所以对于大量字符串拼接，可以使用join()来实现。
 
 ---
 

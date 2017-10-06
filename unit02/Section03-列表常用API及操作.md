@@ -74,6 +74,7 @@ Python列表支持组合和重复这样的操作符，和字符串型类似。
 
 - 组合：使用+，将多个列表拼接到一起
 - 重复：使用*, 重复列表中的值
+- 比较：使用比较运算符比较两个列表
 
 ```python
 
@@ -102,6 +103,44 @@ list1 = ['a','b','c']
 newList = list1 * 3
 
 print(newList) # ['a', 'b', 'c', 'a', 'b', 'c', 'a', 'b', 'c']
+
+```
+
+---
+
+列表比较是从第一个元素开始,如果第一个大,那么那个列表就大：
+
+```python
+
+list1 = [123]
+
+list2 = [234]
+
+print(list1 < list2) # True
+
+list1 = [1,22,33]
+
+list2 = [5,6,7]
+
+print(list1 < list2) # True
+
+list1 = [1,2,3]
+
+list2 = [1,2]
+
+print(list1 > list2) # True
+
+# 字母同理
+
+list1 = ['x','y','z']
+
+list2 = ['a','b','c']
+
+print(list1 > list2) # True
+
+print(list1 != list2) # True
+
+print(list1 == list2) # False
 
 ```
 
@@ -137,6 +176,7 @@ ValueError: 'QUEEN' is not in list
 '''
 
 ```
+
 
 ### 2.3.4 列表的切片操作
 
